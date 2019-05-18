@@ -96,7 +96,7 @@ public class ProductService implements IProductService{
 		
 		return similarProducts;
 	}
-
+	//Method to calculate the discounted price after applying store discounts and promo codes.
 	@Override
 	public double getDiscountedPrice(Product product) {
 		

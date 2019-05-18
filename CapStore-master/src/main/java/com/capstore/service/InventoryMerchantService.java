@@ -33,8 +33,7 @@ public class InventoryMerchantService implements IInventoryMerchantService{
 		
 		inventoryMerchantDao.save(inventory);
 		System.out.println("service after "+inventory);
-		return null;
-		
+		return null;	
 	}
 
 	@Override
@@ -42,7 +41,9 @@ public class InventoryMerchantService implements IInventoryMerchantService{
 		inventoryMerchantDao.deleteById(inventoryId);
 		return null;
 	}
-
+        
+	//Method Name: updateInventory
+	//Method Function: to update the inventory 
 	@Override
 	public List<Inventory> updateInventory(Inventory inventory) {
 		System.out.println(inventory);
@@ -58,16 +59,15 @@ public class InventoryMerchantService implements IInventoryMerchantService{
 		}
 		return null;
 	}
-
+        
+	//Method Name: getInventoriesList
+	//Method Function: to get the inventory list from the database
 	@Override
-
 	public  List<Inventory> getInventoriesList() {
 		
 		return inventoryMerchantDao.findAll();
 	}
-
-
-
+	
 	public  void editAllPromos(Promos promo, String category) {
 		List<Inventory> inventories=inventoryMerchantDao.findAll();
 		int x=0;
@@ -79,7 +79,4 @@ public class InventoryMerchantService implements IInventoryMerchantService{
 			x++;
 		}
 	}
-
-	
-
 }
