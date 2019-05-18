@@ -14,8 +14,7 @@ import com.capstore.model.Email;
 
 @Repository("emailDao")
 @Transactional
-public interface IEmailDao extends JpaRepository<Email, Integer>{
-
+public interface IEmailDao extends JpaRepository<Email, Integer>
 {
 	@Query("from Customer")
 	public List<Customer> getCustomerList();
