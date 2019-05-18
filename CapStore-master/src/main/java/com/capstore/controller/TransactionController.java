@@ -98,7 +98,7 @@ public class TransactionController {
 		
 		Order order = orderService.findOrderById(orderId);
 		if(order==null) {
-			return new ResponseEntity<Invoice>(nullInvoice, HttpStatus.NOT_FOUND);
+			 return new ResponseEntity<Invoice>(nullInvoice, HttpStatus.NOT_FOUND);
 		}
 		
 		double totalAmount = cartService.calculateTotalCartAmount(order.getCart());
@@ -147,8 +147,8 @@ public class TransactionController {
 			return new ResponseEntity<Invoice>(nullInvoice, HttpStatus.OK);
 		}
 		if (!creditDebitService.withdrawAmount(finalAmount, card)) {
-			System.out.println("wd null");
-			orderService.deleteOrder(orderId);
+			 System.out.println("wd null");
+			 orderService.deleteOrder(orderId);
 			return new ResponseEntity<Invoice>(nullInvoice, HttpStatus.OK);
 		}
 
@@ -220,6 +220,6 @@ public class TransactionController {
 		transaction.setPaymentModeNumber(0);
 		transaction.setStatus("success");
 		transaction.setInvoice(invoice);
-		transactionService.insertTransaction(transaction);
+		 transactionService.insertTransaction(transaction);
 	}
 }

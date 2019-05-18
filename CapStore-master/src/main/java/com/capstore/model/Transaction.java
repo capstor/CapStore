@@ -25,7 +25,7 @@ public class Transaction {
 	private long paymentModeNumber;
 	private String status;
 	
-	public int getTransactionId() {
+	public  int getTransactionId() {
 		return transactionId;
 	}
 	public void setTransactionId(int transactionId) {
@@ -60,7 +60,7 @@ public class Transaction {
 		return "Transaction [transactionId=" + transactionId + ", invoice=" + invoice + ", modeOfPayment="
 				+ modeOfPayment + ", paymentModeNumber=" + paymentModeNumber + ", status=" + status + "]";
 	}
-	public Transaction(int transactionId, Invoice invoice, String modeOfPayment, long paymentModeNumber,
+	public  Transaction(int transactionId, Invoice invoice, String modeOfPayment, long paymentModeNumber,
 			String status) {
 		super();
 		this.transactionId = transactionId;
@@ -69,7 +69,7 @@ public class Transaction {
 		this.paymentModeNumber = paymentModeNumber;
 		this.status = status;
 	}
-	public Transaction() {
+	public  Transaction() {
 		super();
 	}
 }
