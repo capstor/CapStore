@@ -1,0 +1,147 @@
+<html>
+<head>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<nav class="navbar navbar-expand-md navbar-dark bg-light">
+
+    <div class="container" >
+      
+  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse justify-content" id="navbarsExampleDefault">
+            
+      <div >
+        
+  </div>
+</div>
+</div>
+</nav>
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">LIST OF CUSTOMERS</h1>
+     </div>
+</section>
+
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Address</th>
+      <th scope="col">Email</th>
+      <th scope="col">Password</th>
+      <th scope="col">Cart Number</th>
+      <th scope="col">Security Question</th>
+      <th scope="col">Security Answer</th>
+      <th scope="col">Reviews</th>
+      <th scope="col">Orders</th>
+      <th scope="col">Customer Name</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let customer of Customer">
+        <tr>
+                <td>{{customer.phoneNumber}}</td>
+        </tr>
+
+        <tr>
+                <td>{{customer.Address}}</td>
+        </tr>
+
+        <tr>
+                <td>{{customer.email}}</td>
+        </tr>
+
+        <tr>
+                <td>{{customer.Password}}</td>
+        </tr>
+
+        <tr>
+                <td>{{customer.cartNumber}}</td>
+        </tr>
+
+        <tr>
+                <td>{{customer.securityQuestion}}</td>
+        </tr>
+
+        <tr>
+                <td>{{customer.securityAnswer}}</td>
+        </tr>
+
+        <tr>
+                <td>{{customer.reviews}}</td>
+        </tr>
+
+        <tr>
+                <td>{{customer.orders}}</td>
+        </tr>
+
+        <tr>
+                <td>{{customer.customerName}}</td>
+        </tr>
+
+    <!-- <tr>
+      <td scope="row">7358623625</td>
+      <td>Mark</td>
+      <td>rty</td>
+      <td>Mark</td>
+      <td scope="row">1</td>
+      <td>Mark</td>
+      <td scope="row">1</td>
+      <td>Mark</td>
+      <td scope="row">1</td>
+      <td>Mark</td>
+      
+    </tr> -->
+  </tbody>
+</table>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<footer class="text-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>About</h5>
+                <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                <p class="mb-0">
+                   CapStore is a place where you can find anything easily and affordabily.
+                </p>
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-xl-3">
+                <h5>Contact</h5>
+                <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-home mr-2"></i> Capgemini Technology Services India Limited – Plot No.14, Rajiv Gandhi Infotech Park, Hinjewadi, Phase-III, MIDC-SEZ, Village Man, Taluka Mulshi, Pune, Maharashtra, India, 411057</li>
+                    <li><i class="fa fa-envelope mr-2"></i> capstore@gmail.com</li>
+                    <li><i class="fa fa-phone mr-2"></i> + 33 12 14 15 16</li>
+                    <li><i class="fa fa-print mr-2"></i> + 33 12 14 15 16</li>
+                </ul>
+            </div>
+            <div class="col-12 copyright mt-3">
+                <p class="float-left">
+                    <a href="#"></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

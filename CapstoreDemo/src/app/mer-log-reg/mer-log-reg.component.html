@@ -1,0 +1,92 @@
+
+<router-outlet></router-outlet>
+<html>
+  <head>
+      
+
+      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+      
+  </head>
+  <body>
+
+
+     
+      
+      <div class="cotn_principal">
+      <div class="cont_centrar">
+      
+        <div class="cont_login">
+      <div class="cont_info_log_sign_up">
+            <div class="col_md_login">
+      <div class="cont_ba_opcitiy">
+              
+              <h2>LOGIN</h2>  
+        <p></p> 
+        <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+        </div>
+        </div>
+      <div class="col_md_sign_up">
+      <div class="cont_ba_opcitiy">
+        <h2>SIGN UP</h2>
+      
+        
+        <p></p>
+      
+        <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+      </div>
+        </div>
+             </div>
+      
+          
+          <div class="cont_back_info">
+             <div class="cont_img_back_grey">
+             <img src="https://www.gtagangwars.de/suite/images/styleLogo-6bd77433ddf78bd8477ea7306e804f677bc925d0.png" alt="" />
+             </div>
+             
+          </div>
+      <div class="cont_forms" >
+          <div class="cont_img_back_">
+             <img src="https://www.gtagangwars.de/suite/images/styleLogo-6bd77433ddf78bd8477ea7306e804f677bc925d0.png" alt="" />
+             </div>
+       <div class="cont_form_login">
+      <a href="#" onclick="ocultar_login_sign_up()" ><i class="material-icons"></i></a>
+         <h2>LOGIN</h2>
+       <input type="text" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+        </div>
+        
+         <div class="cont_form_sign_up">
+      <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons"></i></a>
+           <h2>SIGN UP</h2>
+      <input type="text" placeholder="Email" /><br>
+      <input type="radio"  value="Third Party Merchant"><label for="Third Party Merchant"> Third Party Merchant</label>
+      <input type="password" placeholder="Password" />
+      <input type="password" placeholder="Confirm Password" />
+      <input type="text" placeholder="Name" />
+      <input type="text" placeholder="Add Merchant Date" />
+      <input type="text" placeholder="Phone No." />
+      <input type="text" placeholder="Remove Merchant Date" />
+      <input type="text" placeholder="Status" /> <br><br>
+      <select>
+        <option value="q" default>Security question</option>
+          <option value="q1">Your favourite colour?</option>
+          <option value="q2">Your favourite actor?</option>
+          <option value="q3">Your favourite movie?</option>
+          <option value="q4">Your favourite song?</option>
+        </select>
+        <input type="text" placeholder="Answer here" /> 
+      <br><button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+      
+        </div>
+      
+          </div>
+          
+        </div>
+       </div>
+      </div>
+      
+  </body>
+</html>
