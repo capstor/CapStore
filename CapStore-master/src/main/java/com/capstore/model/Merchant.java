@@ -15,10 +15,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Merchant {
 	
 	@Id
-	@Column(name="merchantId")
+	@Column (name="merchantId")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int merchantId;
-	private String merchantName;
+	private  String merchantName;
 	
 	@Column(unique=true,name="emailId")
 	private String emailId;
@@ -26,7 +26,7 @@ public class Merchant {
 	private String merchantPassword;
 	private String merchantContact;
 	
-	@OneToOne(targetEntity=Address.class,cascade=CascadeType.ALL)
+	@OneToOne (targetEntity=Address.class,cascade=CascadeType.ALL)
 //	@Column(name="merchantAddress")
 	private Address merchantAddress;
 	private boolean isVerified;
@@ -34,7 +34,7 @@ public class Merchant {
 	public int getMerchantId() {
 		return merchantId;
 	}
-	public void setMerchantId(int merchantId) {
+	public void  setMerchantId(int merchantId) {
 		this.merchantId = merchantId;
 	}
 	public String getMerchantName() {
@@ -46,7 +46,7 @@ public class Merchant {
 	public String getEmailId() {
 		return emailId;
 	}
-	public void setEmailId(String emailId) {
+	public void  setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
 	public String getMerchantContact() {
@@ -58,7 +58,7 @@ public class Merchant {
 	public Address getMerchantAddress() {
 		return merchantAddress;
 	}
-	public void setMerchantAddress(Address merchantAddress) {
+	public void  setMerchantAddress(Address merchantAddress) {
 		this.merchantAddress = merchantAddress;
 	}
 	public boolean isVerified() {
