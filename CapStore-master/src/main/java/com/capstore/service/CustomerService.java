@@ -12,57 +12,73 @@ import com.capstore.model.Address;
 import com.capstore.model.Customer;
 
 @Service("customerService")
-public class CustomerService implements ICustomerService{
+public class CustomerService implements ICustomerService
+        {
 	
 	@Autowired
 	private ICustomerDao customerDao;
 	
 	@Override
-	public boolean createCustomer(Customer customer) {
+	public boolean createCustomer(Customer customer) 
+        {
 		customerDao.save(customer);
+
 		return true;
 	}
 
 	@Override
-	public Customer getCustomerByEmail(String customerEmail) {
+	public Customer getCustomerByEmail(String customerEmail) 
+        {
 		return customerDao.getByEmailId(customerEmail);
 	}
 
 	@Override
-	public void updateCustomer(Customer customer) {
+	public void updateCustomer(Customer customer) 
+        {
 		customerDao.save(customer);
 	}
 
 	@Override
-	public List<Customer> getAllCustomers() {
+	public List<Customer> getAllCustomers() 
+        {
 		return customerDao.findAll();
 	}
 
 	@Override
-	public Customer getCustomerByCustomerId(int customerId) {
+	public Customer getCustomerByCustomerId(int customerId) 
+        {
 		Optional<Customer> optional = customerDao.findById(customerId);
-		if(optional.isPresent()) {
+
+		if(optional.isPresent()) 
+                {
 			return optional.get();
 		}
+
 		return null;
 	}
 
 	@Override
-	public List<Customer> deleteCustomer(int customerId) {
+	public List<Customer> deleteCustomer(int customerId) 
+        {
 		customerDao.deleteById(customerId);
+
 		return customerDao.findAll();
 	}
 
 	@Override
-	public List<Address> getAddressesOfCustomer(String customerMail) {
+	public List<Address> getAddressesOfCustomer(String customerMail) 
+        {
 		Customer customer=customerDao.getByEmailId(customerMail);
+
 		List<Address> addresses=customer.getAddresses();
+
 		return addresses;
 	}
 	
 	
 	@Override
-	public Boolean updateMobile(Customer customer) {
+	public Boolean updateMobile(Customer customer) 
+        {
 	
 	customerDao.save(customer);
 
