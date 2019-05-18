@@ -8,7 +8,7 @@ public interface IMerchantService {
 
 	public void addMerchant(Merchant merchant);
 
-	public void deleteMerchant(Integer merchantId);
+        public String getMerchantName(int merchantId);	
 
 	public Merchant getMerchantByMail(String merchantMail);
 	
@@ -18,9 +18,9 @@ public interface IMerchantService {
 	
 	public double getMerchantRating(int merchantId);
 	
-	public String getMerchantName(int merchantId);
-	
 	public List<Merchant> getAllMerchants();
 
 	public boolean checkIfExists(String merchantMailId);
+
+        public void deleteMerchant(Integer merchantId);
 }
