@@ -24,7 +24,7 @@ public class Return {
 	private int returnId;
 	
 //	@Column(name="orderId")
-	@OneToOne(targetEntity=Order.class)
+	 @OneToOne(targetEntity=Order.class)
 	private Order order;
 	
 //	@Column(name="productId")
@@ -73,12 +73,12 @@ public class Return {
 	}
 
 	@Override
-	public String toString() {
-		return "Return [returnId=" + returnId + ", order=" + order + ", product=" + product + ", pickupDate="
+	public String  toString() {
+		return  "Return [returnId=" + returnId + ", order=" + order + ", product=" + product + ", pickupDate="
 				+ pickupDate + ", returnStatus=" + returnStatus + "]";
 	}
-	public Return(int returnId, Order order, Product product, Date pickupDate, String returnStatus) {
-		super();
+	public  Return(int returnId, Order order, Product product, Date pickupDate, String returnStatus) {
+		 super();
 		this.returnId = returnId;
 		this.order = order;
 		this.product = product;

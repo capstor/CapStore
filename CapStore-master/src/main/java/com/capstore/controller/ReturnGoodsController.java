@@ -30,13 +30,13 @@ public class ReturnGoodsController {
 
 	
 	@Autowired
-	private IOrderService orderService;
+	private  IOrderService orderService;
 
 	@Autowired
 	private IReturnService returnService;
 	
 	@Autowired
-	private IProductImageService productImageService;
+	private  IProductImageService productImageService;
 	 
 	@GetMapping("/myorders")
 	public ResponseEntity<List<Order>> getAllOrders() {
@@ -89,8 +89,8 @@ public class ReturnGoodsController {
 		}
 		
 	
-		@GetMapping("/getimages")
-		public ResponseEntity<List<ProductImage>> getimages() {
+		@GetMapping ("/getimages")
+		public  ResponseEntity<List<ProductImage>> getimages() {
 			List<ProductImage> orders=  productImageService.getimages();
 			
 	
