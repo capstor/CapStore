@@ -75,6 +75,8 @@ public class AdminController {
 
 	
 //	**************************Customers**************************************
+	//Method Name: getAllCustomers
+	//Method Function: to view all the customers fetched from the customers table
 
 	@GetMapping(value = "/customers/all")
 	public ResponseEntity<java.util.List<Customer>> getAllCustomers() {
@@ -87,42 +89,33 @@ public class AdminController {
 		return new ResponseEntity<java.util.List<Customer>>(list_of_customers, HttpStatus.OK);
 	}
 	
-	
+	//Method Name: deleteCustomer
+	//Method Function: to delete the customer using the given customer id
 	@DeleteMapping(value="/deleteCustomerByAdmin/{customerId}")
     public ResponseEntity<List<Customer>>deleteCustomer(@PathVariable("customerId")int customerId){
-	
 	   List<Customer> customers=customerService.deleteCustomer(customerId);
-	
 	   if(customers==null)
 		  return new ResponseEntity("Sorry!! Customer Id not available!",HttpStatus.NOT_FOUND);
-	
 	return new ResponseEntity<List<Customer>>(customers,HttpStatus.OK);
 	
 }
 	
-	
 //	************************Merchants**********************************************
-	
-	
 	@PostMapping("/inviteMerchant")
 	public ResponseEntity<Boolean> inviteMerchant(@RequestBody String merchantMailId){
 		if(merchantService.checkIfExists(merchantMailId)){
-			
 			Email email = new Email();
 			email.setMessage("Please accept the Request!");
 			email.setLink("//localhost:4200");
 			email.setReceiverEmailId(merchantMailId);
 			email.setSenderEmailId("admin@gmail.com");
 			emailService.sendEmail(email);
-			
-			
 			return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 		}else{
 			return new ResponseEntity<Boolean>(false, HttpStatus.OK);
 		}
 	}
-	
-	
+		
 	@GetMapping(value = "/merchants/all")
 	public ResponseEntity<java.util.List<Merchant>> getAllMerchants() {
 		System.out.println("");
@@ -132,38 +125,30 @@ public class AdminController {
 			new ResponseEntity("No Merchants found", HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<java.util.List<Merchant>>(list_of_merchants, HttpStatus.OK);
-		
 	}
 	
 	//admin verifies Merchant by clicking on approve button
 	@RequestMapping("/merchantVerification/{merchantId}")
 	public ResponseEntity<List<Merchant>> verifyMerchant_On_clicking_Approve_BUTTON(@PathVariable("merchantId") int merchantId) {
-		
 		Merchant merchant = merchantService.getMerchantByMerchantId(merchantId);
 		merchant.setVerified(true); 
 		merchantService.updateMerchant(merchant);
-		
 		List<Merchant> list_of_verified_merchants=merchantService.getAllMerchants();
-		  
-		Login login = new Login();
-	    login.setEmailId(merchant.getEmailId());
-	    login.setPassword(merchant.getMerchantPassword());
-	    login.setUserTypes("MERCHANT");
-        		
-		return new ResponseEntity<List<Merchant>>(list_of_verified_merchants,HttpStatus.OK);
+	        Login login = new Login();
+	        login.setEmailId(merchant.getEmailId());
+	        login.setPassword(merchant.getMerchantPassword());
+	        login.setUserTypes("MERCHANT");
+                return new ResponseEntity<List<Merchant>>(list_of_verified_merchants,HttpStatus.OK);
 	}
 	
 	
 	//admin removes Merchant by clicking on reject button
 	@GetMapping("/merchantReject/{merchantId}")
 	public ResponseEntity<List<Merchant>> rejectMerchant_On_clicking_Reject_BUTTON(@PathVariable("merchantId") int merchantId){
-		
 		List<Merchant> list_of_verified_merchants=merchantService.getAllMerchants();
-		
-		Merchant merchant=merchantService.getMerchantByMerchantId(merchantId);
+	        Merchant merchant=merchantService.getMerchantByMerchantId(merchantId);
 		System.out.println(merchant);
-	    
-	    System.out.println("\r\n" + 
+	        System.out.println("\r\n" + 
 	    		"                                                                                                                                                                                                                                                                                                          \r\n" + 
 	    		"                                         dddddddd                                                                                                                                                                                         dddddddd                                                        \r\n" + 
 	    		"               AAA                       d::::::d                        iiii                                                              jjjj                                               tttt                                        d::::::d     YYYYYYY       YYYYYYY                              \r\n" + 
@@ -199,11 +184,9 @@ public class AdminController {
 		
 		return new ResponseEntity<List<Merchant>>(list_of_verified_merchants,HttpStatus.OK);
 	}
-	
 //  *********************** Upload Images ****************************************
 	
 	List<String> files = new ArrayList<String>();
-	
 	@PostMapping("/post/{productId}")
 	public ResponseEntity<String> handleFileUpload(@PathVariable("productId") String productId,@RequestParam("file") MultipartFile file) {
 		
@@ -220,6 +203,7 @@ public class AdminController {
 			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(message);
 		}
 	}
+	
 	@PostMapping("/slider/{productId}/{Id}")
 	public ResponseEntity<String> handleSliderUpload(@PathVariable("productId") String productId,@PathVariable("Id") String Id,@RequestParam("file") MultipartFile file) {
 		
@@ -237,9 +221,9 @@ public class AdminController {
 		}
 	}
 	
-	
-	
 	@GetMapping("/viewProducts")
+	//Method Name: getAllProducts
+	//Method Function: to view all the products
 	public ResponseEntity<List<Product>> getAllProducts(){
 		
 		//System.out.println("VIEWproducts");
