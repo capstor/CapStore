@@ -14,7 +14,7 @@ import com.capstore.model.Merchant;
 public interface IMerchantDao extends JpaRepository<Merchant, Integer>{
 	
 
-	public Merchant getByEmailId(String merchantMail);
+	public  Merchant getByEmailId(String merchantMail);
 	
 //	public double getMerchantRating(int merchantId);
 	

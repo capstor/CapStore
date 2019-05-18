@@ -34,9 +34,9 @@ public class RegisterController {
 		 System.out.println(session.getAttribute("emailId"));
         boolean success=customerService.createCustomer(customer);
         if(success)
-        return new ResponseEntity<String>("Customer Registered Successfully", HttpStatus.OK);		
+        return new ResponseEntity<String>("*****Customer Registered Successfully *****", HttpStatus.OK);		
         else
-        	return new ResponseEntity<String>("Customer Registration Failed", HttpStatus.NO_CONTENT);		
+        	return new ResponseEntity<String>("````Customer Registration Failed````", HttpStatus.NO_CONTENT);		
 
 	}
 	
