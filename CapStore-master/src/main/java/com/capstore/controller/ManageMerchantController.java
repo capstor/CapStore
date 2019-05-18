@@ -96,8 +96,6 @@ public class ManageMerchantController {
 	
 	@PostMapping("/passwordMatch/{email}")
 	public ResponseEntity<Boolean> passwordMatch(@RequestBody String pasword,HttpSession session, @PathVariable("email") String mail) {
-
-		
 		Login login=loginService.getLoginByEmailId(mail);
 		System.out.println(login);
 		if(login.getPassword().equals(pasword)) {
@@ -113,25 +111,17 @@ public class ManageMerchantController {
 
 	@PostMapping("/passwordChange/{email}")
 	public ResponseEntity<Boolean> passwordChange(@RequestBody String password, HttpServletRequest request, @PathVariable("email") String mail) {
-
-		
-		//String merchantMail=(String) session.getAttribute("email");
 		Merchant merchant=merchantService.getMerchantByMail(mail);
 		merchant.setMerchantPassword(password);
 		merchantService.updateMerchant(merchant);
 		Login login=loginService.getLoginByEmailId(mail);
 		login.setPassword(password);
 		loginService.updateLogin(login);
-		
 		return new ResponseEntity<Boolean>(true,HttpStatus.OK);
-
-
-
-
 	}
 	
 	//-------------------------------------Upload Images---------------------------------------------
-List<String> files = new ArrayList<String>();
+    List<String> files = new ArrayList<String>();
 	
 	@PostMapping("/postMerchant/{productId}")
 	public ResponseEntity<String> handleFileUpload(@PathVariable("productId") String productId,@RequestParam("file") MultipartFile file) {
@@ -149,9 +139,9 @@ List<String> files = new ArrayList<String>();
 			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(message);
 		}
 	}
+	
 	@PostMapping("/sliderMerchant/{productId}/{Id}")
 	public ResponseEntity<String> handleSliderUpload(@PathVariable("productId") String productId,@PathVariable("Id") String Id,@RequestParam("file") MultipartFile file) {
-		
 		String message = "";
 		try {
 			System.out.println(productId);
@@ -166,26 +156,12 @@ List<String> files = new ArrayList<String>();
 		}
 	}
 	
-	
-	
 	@GetMapping("/viewMerchantProducts/{emailId}")
 	public ResponseEntity<List<Product>> getMerchantProducts(@PathVariable("emailId")String emailId){
-		
-		//System.out.println("VIEWproducts");
 		List<Product> products=productService.getMerchantProducts(emailId);
 		if(products.isEmpty())
 			 return new ResponseEntity("Sorry ! Inventories not available!",HttpStatus.NOT_FOUND);
-		
-		
 		return new ResponseEntity<List<Product>>(products,HttpStatus.OK);
 		
 	}
-	
-	
-
-	
-
-
-
-
 }
