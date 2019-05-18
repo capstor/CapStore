@@ -126,7 +126,7 @@ public class TransactionController {
 	public ResponseEntity<Invoice> payByCard(@RequestBody CreditDebit creditDebit, @PathVariable int orderId) {// Team 6
 		Invoice nullInvoice = null;
 		if (!creditDebitService.isValidCard(creditDebit)) {
-			System.out.println("card invalid");
+			System.out.println("card entered is invalid");
 			orderService.deleteOrder(orderId);
 			return new ResponseEntity<Invoice>(nullInvoice, HttpStatus.OK);
 		}
