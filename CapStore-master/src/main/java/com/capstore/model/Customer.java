@@ -71,12 +71,14 @@ public class Customer {
 	public List<Address> getAddresses() {
 		return addresses;
 	}
+	
 	public void setAddresses(List<Address> addresses) {
 		this.addresses = addresses;
 	}
 	public boolean isVerified() {
 		return isVerified;
 	}
+	
 	public void setVerified(boolean isVerified) {
 		this.isVerified = isVerified;
 	}
@@ -86,8 +88,10 @@ public class Customer {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return "Customer [customerId=" + customerId + ", firstName=" + firstName + ", lastName=" + lastName
 				+ ", mobileNumber=" + mobileNumber + ", emailId=" + emailId + ", password=" + password + ", addresses="
 				+ addresses + ", isVerified=" + isVerified + "]";
@@ -122,7 +126,8 @@ public class Customer {
 		return result;
 	}
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(Object obj)
+	{
 		if (this == obj)
 			return true;
 		if (obj == null)

@@ -52,6 +52,7 @@ public class Cart {
 	public void setMinimumAmount(int minimumAmount) {
 		this.minimumAmount = minimumAmount;
 	}
+	//inmpleting tostring for cart pojo class
 	@Override
 	public String toString() {
 		return "Cart [cartId=" + cartId + ", customer=" + customer + ", cartProducts=" + cartProducts

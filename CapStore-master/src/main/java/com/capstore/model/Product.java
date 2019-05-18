@@ -20,7 +20,7 @@ public class Product {
 	private String productName;
 	private String productCategory;
 	
-//	@Column(name="inventoryId")
+	
 	@OneToOne(targetEntity=Inventory.class)
 	private Inventory inventory;
 	
@@ -42,7 +42,7 @@ public class Product {
 	
 	@Column(name="imageUrl")
 	private String imageUrl;
-	//all the getters and setters
+	//all the getters and setters of products
 	
 	public int getProductId() {
 		return productId;

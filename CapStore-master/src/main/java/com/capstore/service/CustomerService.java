@@ -18,13 +18,15 @@ public class CustomerService implements ICustomerService{
 	private ICustomerDao customerDao;
 	
 	@Override
-	public boolean createCustomer(Customer customer) {
+	public boolean createCustomer(Customer customer) 
+	{
 		customerDao.save(customer);
 		return true;
 	}
 
 	@Override
-	public Customer getCustomerByEmail(String customerEmail) {
+	public Customer getCustomerByEmail(String customerEmail)
+	{
 		return customerDao.getByEmailId(customerEmail);
 	}
 
@@ -34,27 +36,32 @@ public class CustomerService implements ICustomerService{
 	}
 
 	@Override
-	public List<Customer> getAllCustomers() {
+	public List<Customer> getAllCustomers() 
+	{
 		return customerDao.findAll();
 	}
 
 	@Override
-	public Customer getCustomerByCustomerId(int customerId) {
+	public Customer getCustomerByCustomerId(int customerId)
+	{
 		Optional<Customer> optional = customerDao.findById(customerId);
-		if(optional.isPresent()) {
+		if(optional.isPresent()) 
+		{
 			return optional.get();
 		}
 		return null;
 	}
 
 	@Override
-	public List<Customer> deleteCustomer(int customerId) {
+	public List<Customer> deleteCustomer(int customerId)
+	{
 		customerDao.deleteById(customerId);
 		return customerDao.findAll();
 	}
 
 	@Override
-	public List<Address> getAddressesOfCustomer(String customerMail) {
+	public List<Address> getAddressesOfCustomer(String customerMail) 
+	{
 		Customer customer=customerDao.getByEmailId(customerMail);
 		List<Address> addresses=customer.getAddresses();
 		return addresses;
@@ -62,7 +69,8 @@ public class CustomerService implements ICustomerService{
 	
 	
 	@Override
-	public Boolean updateMobile(Customer customer) {
+	public Boolean updateMobile(Customer customer) 
+	{
 	
 	customerDao.save(customer);
 
