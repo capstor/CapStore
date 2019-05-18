@@ -28,7 +28,7 @@ public class InventoryMerchantService implements IInventoryMerchantService{
 	}
 
 	@Override
-	public List<Inventory> addNewInventory(Inventory inventory) {
+	public  List<Inventory> addNewInventory(Inventory inventory) {
 		System.out.println("service"+inventory);
 		
 		inventoryMerchantDao.save(inventory);
@@ -61,14 +61,14 @@ public class InventoryMerchantService implements IInventoryMerchantService{
 
 	@Override
 
-	public List<Inventory> getInventoriesList() {
+	public  List<Inventory> getInventoriesList() {
 		
 		return inventoryMerchantDao.findAll();
 	}
 
 
 
-	public void editAllPromos(Promos promo, String category) {
+	public  void editAllPromos(Promos promo, String category) {
 		List<Inventory> inventories=inventoryMerchantDao.findAll();
 		int x=0;
 		for(Inventory inventory:inventories) {
