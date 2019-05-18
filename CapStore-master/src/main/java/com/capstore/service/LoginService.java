@@ -12,7 +12,8 @@ import com.capstore.model.Login;
 
 
 @Service("loginService")
-public class LoginService implements ILoginService{
+public class LoginService implements ILoginService
+{
 	
 @Autowired
 	private ILoginDao loginDao;
@@ -21,16 +22,17 @@ public class LoginService implements ILoginService{
 	private ICustomerDao customerDao;
 	@Override
 	public Login getLogin(String emailId, String password) 
-	{
+        {
 		// TODO Auto-generated method stub
 		Login login=loginDao.getByEmailIdAndPassword( emailId, password);
+
 		System.out.println(login);
+
 		return login;
 	}
 
 	@Override
-	public Customer getCustomerId(String emailId) 
-	{
+	public Customer getCustomerId(String emailId) {
 		
 		return customerDao.getByEmailId(emailId);
 		
@@ -41,9 +43,11 @@ public class LoginService implements ILoginService{
 
 	@Override
 	public boolean setPasswordByEmail(Login login) 
-	{
+        {
 		  Login login1=loginDao.getByEmailId(login.getEmailId());
+
 		   System.out.println(login1);
+
 		   if(login1==null)
 		   {
 			   return false;
@@ -51,8 +55,11 @@ public class LoginService implements ILoginService{
 		   else
 		   {
 		   login1.setPassword(login.getPassword());
-			System.out.println(login1);
+
+		   System.out.println(login1);
+
 		   loginDao.save(login1);
+
 		   return true;
 		   }
 		
@@ -60,7 +67,7 @@ public class LoginService implements ILoginService{
 
 	@Override
 	public Login getLoginByEmailId(String emailId) 
-	{
+        {
 		// TODO Auto-generated method stub
 		
 		return loginDao.getByEmailId(emailId);
@@ -69,8 +76,8 @@ public class LoginService implements ILoginService{
 	}
 
 	@Override
-	public void updateLogin(Login login)
-	{
+	public void updateLogin(Login login) 
+        {
 		// TODO Auto-generated method stub
 		
 		 loginDao.save(login);
@@ -78,8 +85,8 @@ public class LoginService implements ILoginService{
 	}
 
 	@Override
-	public void remove(String emailId)
-	{
+	public void remove(String emailId) 
+        {
 		loginDao.deleteByEmailId(emailId);
 	}
 }

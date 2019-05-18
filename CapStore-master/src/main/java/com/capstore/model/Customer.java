@@ -37,67 +37,81 @@ public class Customer {
 	@Column(name="isVerified")
 	private boolean isVerified;
 	
-	public int getCustomerId() {
+	public int getCustomerId() 
+        {
 		return customerId;
 	}
-	public void setCustomerId(int customerId) {
+	public void setCustomerId(int customerId) 
+        {
 		this.customerId = customerId;
 	}
-	public String getFirstName() {
+	public String getFirstName() 
+        {
 		return firstName;
 	}
-	public void setFirstName(String firstName) {
+	public void setFirstName(String firstName) 
+        {
 		this.firstName = firstName;
 	}
-	public String getLastName() {
+	public String getLastName() 
+        {
 		return lastName;
 	}
-	public void setLastName(String lastName) {
+	public void setLastName(String lastName) 
+        {
 		this.lastName = lastName;
 	}
-	public String getMobileNumber() {
+	public String getMobileNumber() 
+        {
 		return mobileNumber;
 	}
-	public void setMobileNumber(String mobileNumber) {
+	public void setMobileNumber(String mobileNumber) 
+        {
 		this.mobileNumber = mobileNumber;
 	}
-	public String getEmailId() {
+	public String getEmailId() 
+        {
 		return emailId;
 	}
-	public void setEmailId(String emailId) {
+	public void setEmailId(String emailId) 
+        {
 		this.emailId = emailId;
 	}
 	
-	public List<Address> getAddresses() {
+	public List<Address> getAddresses() 
+        {
 		return addresses;
 	}
-	
-	public void setAddresses(List<Address> addresses) {
+	public void setAddresses(List<Address> addresses) 
+        {
 		this.addresses = addresses;
 	}
-	public boolean isVerified() {
+	public boolean isVerified() 
+        {
 		return isVerified;
 	}
-	
-	public void setVerified(boolean isVerified) {
+	public void setVerified(boolean isVerified) 
+        {
 		this.isVerified = isVerified;
 	}
-	public String getPassword() {
+	public String getPassword() 
+        {
 		return password;
 	}
-	public void setPassword(String password) {
+	public void setPassword(String password) 
+        {
 		this.password = password;
 	}
-	
 	@Override
 	public String toString() 
-	{
+        {
 		return "Customer [customerId=" + customerId + ", firstName=" + firstName + ", lastName=" + lastName
 				+ ", mobileNumber=" + mobileNumber + ", emailId=" + emailId + ", password=" + password + ", addresses="
 				+ addresses + ", isVerified=" + isVerified + "]";
 	}
 	public Customer(int customerId, String firstName, String lastName, String mobileNumber, String emailId,
-			String password, List<Address> addresses, boolean isVerified) {
+			String password, List<Address> addresses, boolean isVerified) 
+       {
 		super();
 		this.customerId = customerId;
 		this.firstName = firstName;
@@ -108,11 +122,13 @@ public class Customer {
 		this.addresses = addresses;
 		this.isVerified = isVerified;
 	}
-	public Customer() {
+	public Customer() 
+        {
 		super();
 	}
 	@Override
-	public int hashCode() {
+	public int hashCode() 
+        {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((addresses == null) ? 0 : addresses.hashCode());
@@ -126,8 +142,8 @@ public class Customer {
 		return result;
 	}
 	@Override
-	public boolean equals(Object obj)
-	{
+	public boolean equals(Object obj) 
+        {
 		if (this == obj)
 			return true;
 		if (obj == null)
