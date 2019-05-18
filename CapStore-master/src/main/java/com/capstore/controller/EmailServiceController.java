@@ -23,11 +23,9 @@ public class EmailServiceController {
 
 	@Autowired
 	private IEmailService emailService;
-	
-	
-	//This method can send email from admin to customer and from merchant to admin
+
 	@PostMapping("/emailService")
-	public ResponseEntity<Boolean> sendEmailToCustomer(@RequestBody Email email){
+	public ResponseEntity<Boolean>  sendEmailToCustomer(@RequestBody Email email){
 		
 		//Get customer list
 		List<Customer> customerList=emailService.getCustomerList();
