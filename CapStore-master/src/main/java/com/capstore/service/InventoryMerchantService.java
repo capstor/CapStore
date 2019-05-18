@@ -20,30 +20,33 @@ public class InventoryMerchantService implements IInventoryMerchantService{
 	@Autowired
 	private IProductService productService;
 	
+        //List of all the inventory will be displayed 
 	@Override
 	public List<Inventory> getAllInventories(int merchantId) {
 		List<Inventory> inventories=inventoryMerchantDao.getAllInventoryByMerchantId(merchantId);
 		
 		return inventories;
 	}
-
+        
+        //New Inventory is added to the list
 	@Override
 	public  List<Inventory> addNewInventory(Inventory inventory) {
 		System.out.println("service"+inventory);
 		
 		inventoryMerchantDao.save(inventory);
 		System.out.println("service after "+inventory);
-		return null;	
+		return null;
+		
 	}
 
+        //Delete a particular inventory from the list
 	@Override
 	public List<Inventory> deleteInventory(int inventoryId) {
 		inventoryMerchantDao.deleteById(inventoryId);
 		return null;
 	}
-        
-	//Method Name: updateInventory
-	//Method Function: to update the inventory 
+
+        //Update the list of inventory       
 	@Override
 	public List<Inventory> updateInventory(Inventory inventory) {
 		System.out.println(inventory);
@@ -59,15 +62,17 @@ public class InventoryMerchantService implements IInventoryMerchantService{
 		}
 		return null;
 	}
-        
-	//Method Name: getInventoriesList
-	//Method Function: to get the inventory list from the database
+
+        //To get the list with all elements
 	@Override
+
 	public  List<Inventory> getInventoriesList() {
 		
 		return inventoryMerchantDao.findAll();
 	}
-	
+
+
+        //To edit all the promos 
 	public  void editAllPromos(Promos promo, String category) {
 		List<Inventory> inventories=inventoryMerchantDao.findAll();
 		int x=0;
@@ -79,4 +84,7 @@ public class InventoryMerchantService implements IInventoryMerchantService{
 			x++;
 		}
 	}
+
+	
+
 }

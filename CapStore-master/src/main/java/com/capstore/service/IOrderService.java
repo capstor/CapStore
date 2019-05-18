@@ -13,7 +13,6 @@ public interface IOrderService {
 
 	public boolean checkAvailabilityInInventory(Order order);
 	public Order placeOrder(Order order);
-	
 	public boolean deliverOrderAndUpdateInventory(Order order);
 	
 	public Order findOrderById(int orderId);

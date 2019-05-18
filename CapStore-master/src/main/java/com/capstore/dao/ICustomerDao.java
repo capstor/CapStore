@@ -14,8 +14,7 @@ import com.capstore.model.Customer;
 
 @Repository("customerDao")
 @Transactional
-public interface ICustomerDao extends JpaRepository<Customer,Integer> 
-{
+public interface ICustomerDao extends JpaRepository<Customer,Integer> {
 
 
 	Customer getByEmailId(String customerEmail);

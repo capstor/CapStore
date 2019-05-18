@@ -39,7 +39,8 @@ public class YouMailController {
 			return new ResponseEntity<Boolean>(false,HttpStatus.OK);
 		}
 	}
-//sending  verification e_mail
+	
+	
 	@PostMapping("/youMail/email")
 	public ResponseEntity<List<Email>> sendVerificationToMail(@RequestBody String email)
 	{

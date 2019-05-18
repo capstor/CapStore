@@ -75,7 +75,6 @@ public class Feedback {
 	public Merchant getMerchant() {
 		return merchant;
 	}
-	
 	public void setMerchant(Merchant merchant) {
 		this.merchant = merchant;
 	}

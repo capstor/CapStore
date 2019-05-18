@@ -11,8 +11,7 @@ import com.capstore.model.Login;
 
 @Repository("loginDao")
 @Transactional
-public interface ILoginDao extends JpaRepository<Login,Integer>
-{
+public interface ILoginDao extends JpaRepository<Login,Integer>{
 	/*@Query("from Login where emailId=:emailId and password=:password")*/
 	public Login getByEmailIdAndPassword(String emailId, String password);
 

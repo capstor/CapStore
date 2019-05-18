@@ -46,10 +46,6 @@ public class CartController {
 
 	List<String> files = new ArrayList<String>();
 	
-	
-	
-	
-	
 
 	
 	@DeleteMapping("/deleteProductFromCart/{customerEmailId}/{productId}")
