@@ -96,7 +96,14 @@ public class ProductService implements IProductService{
 		
 		return similarProducts;
 	}
-	//Method to calculate the discounted price after applying store discounts and promo codes.
+/**
+* The getDiscountedPrice method calculates the discount applied on a product 
+* after the implementation of Promo codes and comopany provided discounts.
+* The given code snippet acquires the product price from the product database and gets the discount percentage 
+* specified for a given product. 
+* The method calculates the new price for the product and is reflected in the cart details and invoice.
+* @author  Yagnya Nagpal
+**/
 	@Override
 	public double getDiscountedPrice(Product product) {
 		
