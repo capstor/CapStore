@@ -114,14 +114,14 @@ public class Inventory {
 	}
 	
 	
-	public String getImageUrl() {
+	public  String getImageUrl() {
 		return imageUrl;
 	}
-	public void setImageUrl(String imageUrl) {
+	public  void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
 	@Override
-	public String toString() {
+	public  String toString() {
 		return "Inventory [inventoryId=" + inventoryId + ", merchant=" + merchant + ", productName=" + productName
 				+ ", productCategory=" + productCategory + ", productPrice=" + productPrice + ", productDescription="
 				+ productDescription + ", productBrand=" + productBrand + ", promo=" + promo + ", status=" + status
@@ -146,7 +146,7 @@ public class Inventory {
 		this.inventoryQuantity = inventoryQuantity;
 		this.imageUrl = imageUrl;
 	}
-	public Inventory() {
+	public  Inventory() {
 		super();
 	}
 	@Override
@@ -170,7 +170,7 @@ public class Inventory {
 		return result;
 	}
 	@Override
-	public boolean equals(Object obj) {
+	public  boolean equals(Object obj) {
 		if (this == obj)
 			return true;
 		if (obj == null)
