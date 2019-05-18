@@ -23,6 +23,7 @@ public class CouponsController {
 	@Autowired
 	ICouponService couponService;
 	
+	//applying coupon method by the user
 	@GetMapping("/verifyingCoupon/{couponCode}")
 	public ResponseEntity<Coupons> applyingCoupon(@PathVariable("couponCode") String couponCode){
 		
