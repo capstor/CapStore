@@ -69,7 +69,7 @@ public class LoginController {
 		
 		Email mail=new Email();
 		mail.setReceiverEmailId(login.getEmailId());
-		mail.setMessage("Your  new password is capstore123");
+		mail.setMessage("Your  new password  is capstore123");
 		mail.setImageUrl("");
 		emailService.sendEmail(mail);
 		return  new ResponseEntity<Boolean>(true,HttpStatus.OK);
