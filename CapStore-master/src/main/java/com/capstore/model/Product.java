@@ -42,6 +42,7 @@ public class Product {
 	
 	@Column(name="imageUrl")
 	private String imageUrl;
+	//all the getters and setters
 	
 	public int getProductId() {
 		return productId;
