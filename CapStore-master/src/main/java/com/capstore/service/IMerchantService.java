@@ -16,10 +16,10 @@ public interface IMerchantService {
 
 	public void updateMerchant(Merchant merchant);
 	
-	public double getMerchantRating(int merchantId);
+        public List<Merchant> getAllMerchants();	
+ 
+        public double getMerchantRating(int merchantId);
 	
-	public List<Merchant> getAllMerchants();
-
 	public boolean checkIfExists(String merchantMailId);
 
         public void deleteMerchant(Integer merchantId);
