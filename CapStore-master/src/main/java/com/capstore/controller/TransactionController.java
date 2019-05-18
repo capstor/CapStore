@@ -55,7 +55,7 @@ public class TransactionController {
 	public ResponseEntity<List<Transaction>> getAllTransactions(HttpSession session) {// Team 6
 		List<Transaction> transactions = transactionService.getAllTransactions();
 		if (transactions.isEmpty()) {
-			return new ResponseEntity("Transactions not found", HttpStatus.OK);
+			return new ResponseEntity("Transactions cannot be found", HttpStatus.OK);
 		}
 		return new ResponseEntity<List<Transaction>>(transactions, HttpStatus.OK);
 	}
