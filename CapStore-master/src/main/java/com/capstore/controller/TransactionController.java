@@ -28,13 +28,13 @@ import com.capstore.service.IInvoiceService;
 import com.capstore.service.IOrderService;
 import com.capstore.service.ITransactionService;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin (origins = "*")
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping ("/api/v1")
 public class TransactionController {
 
 	@Autowired
-	ITransactionService transactionService;
+	ITransactionService  transactionService;
 
 	@Autowired
 	IBankAccountService bankAccountService;
@@ -98,7 +98,7 @@ public class TransactionController {
 		
 		Order order = orderService.findOrderById(orderId);
 		if(order==null) {
-			return new ResponseEntity<Invoice>(nullInvoice, HttpStatus.NOT_FOUND);
+			 return new ResponseEntity<Invoice>(nullInvoice, HttpStatus.NOT_FOUND);
 		}
 		
 		double totalAmount = cartService.calculateTotalCartAmount(order.getCart());
@@ -147,8 +147,8 @@ public class TransactionController {
 			return new ResponseEntity<Invoice>(nullInvoice, HttpStatus.OK);
 		}
 		if (!creditDebitService.withdrawAmount(finalAmount, card)) {
-			System.out.println("wd null");
-			orderService.deleteOrder(orderId);
+			 System.out.println("wd null");
+			 orderService.deleteOrder(orderId);
 			return new ResponseEntity<Invoice>(nullInvoice, HttpStatus.OK);
 		}
 
@@ -182,8 +182,8 @@ public class TransactionController {
 			return new ResponseEntity<Invoice>(nullInvoice, HttpStatus.OK);
 		}
 
-		Invoice invoice = generateInvoice(order,totalAmount,finalAmount);
-		addCashTransaction(invoice);
+		Invoice invoice =  generateInvoice(order,totalAmount,finalAmount);
+		addCashTransaction (invoice);
 
 		return new ResponseEntity<Invoice>(invoice, HttpStatus.OK);
 	}
@@ -220,6 +220,6 @@ public class TransactionController {
 		transaction.setPaymentModeNumber(0);
 		transaction.setStatus("success");
 		transaction.setInvoice(invoice);
-		transactionService.insertTransaction(transaction);
+		 transactionService.insertTransaction(transaction);
 	}
 }

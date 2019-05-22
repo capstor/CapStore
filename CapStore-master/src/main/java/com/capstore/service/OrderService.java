@@ -64,7 +64,7 @@ public class OrderService implements IOrderService {
 		}
 		return null;
 	}
-
+//checking of availability of order
 	@Override
 	public boolean checkAvailabilityInInventory(Order order) {//checking availability of ordered products
 
@@ -87,7 +87,7 @@ public class OrderService implements IOrderService {
 		}
 		return true;
 	}
-
+//confirming the placement of order
 	@Override
 	public Order placeOrder(Order order) {
 		/*System.out.println(order);
@@ -108,7 +108,7 @@ public class OrderService implements IOrderService {
 		Order newOrder = orderDao.save(order);
 		return newOrder;
 	}
-
+//code to update datbase after placing order
 	@Override
 	public boolean deliverOrderAndUpdateInventory(Order order) {
 		List<CartProduct> products = order.getCart().getCartProducts();
