@@ -1,0 +1,318 @@
+@import "params";
+@import "common";
+
+:host {
+  margin: $grid*2 0 $grid*4 0;
+}
+
+.breadcrumbs {
+  margin: $grid*2.5 auto;
+  ul {
+    padding-left: 0;
+    li {
+      display: inline-block;
+      &:after {
+        border-top: none;
+        border-bottom: none;
+        border-left: none;
+        content: "/";
+        color: inherit;
+        display: inline-block;
+        margin: 0;
+        padding: 0 $grid/2;
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+    a {
+      color: $stormGreyColor;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+    .-active {
+      a {
+        color: $textColor;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.list-page-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.filter {
+  margin: 0 $grid*6 0 0;
+  width: 280px;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+.list-title {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.4rem;
+  justify-content: space-between;
+  margin: $grid*1.5 0;
+  text-transform: uppercase;
+  h2 {
+    font-size: 1.4rem;
+  }
+}
+
+.search-result-options {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: $grid*2.5 0;
+}
+
+.pagination-box {
+  display: flex;
+  flex-direction: row;
+  .navigation-button {
+    border-color: $mercuryColor;
+    border-left-width: 1px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-style: solid;
+    box-sizing: border-box;
+    color: $mercuryColor;
+    font-size: 0.9rem;
+    padding: $grid $grid*2;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    &.previous {
+      &:before {
+        content: "";
+        border: 2px solid #333;
+        border-top: transparent;
+        border-right: transparent;
+        display: inline-block;
+        margin-right: 0;
+        position: relative;
+        right: -1px;
+        padding: $grid/2;
+        transform: rotate(45deg);
+        top: 0;
+      }
+    }
+    &.next {
+      &:after {
+        content: "";
+        display: inline-block;
+        border: 2px solid #333;
+        border-top: transparent;
+        border-right: transparent;
+        left: -1px;
+        margin-right: 0;
+        padding: 3px;
+        position: relative;
+        top: 0;
+        transform: rotate(225deg);
+      }
+    }
+  }
+  .page-box {
+    display: inline-block;
+    .page-number {
+      background-color: #fff;
+      border-color: $mercuryColor;
+      border-left-width: 1px;
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+      border-style: solid;
+      box-sizing: border-box;
+      border-right: none;
+      border-radius: 0;
+      display: inline-block;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-left: -3px;
+      padding: 9px 17px;
+      text-align: center;
+      vertical-align: middle;
+      width: auto;
+      &.-active {
+        background: $primaryColor;
+        border-color: $primaryColor;
+        color: #ffffff;
+      }
+      &:hover{
+        background: $primaryColor;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+
+///SLIDERS
+.container{
+  position: relative;
+   width: 50%;
+   margin-bottom: 40px;
+   border: 2px solid black;
+}
+
+
+
+.list-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: $grid*3;
+}
+
+.card {
+  box-sizing: border-box;
+  padding: $grid;
+  width: 33%;
+}
+
+@media (max-width: 1200px) {
+  .card {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .list-page-container {
+    flex-direction: column;
+  }
+  .filter {
+    display: none;
+  }
+  .card {
+    width: 33%;
+  }
+}
+
+@media (max-width: 800px) {
+  .card{
+    width: 50%;
+  }
+}
+@media (max-width: 600px) {
+  .card{
+    width: 100%;
+  }
+  .pagination-box{
+    &.-top{
+      display: none;
+    }
+  }
+}
+
+// .sort{
+//  padding:2px 2px 2px 2px;
+//  float: left;
+
+
+// }
+
+.button5 {background-color: #17e2c7;}
+
+.myclass {
+  height: 30px;
+  position: relative;
+  border: 2px solid #cdcdcd;
+  border-color: rgba(0, 0, 0, .14);
+  background-color: AliceBlue;
+  font-size: 14px;
+}
+
+.inputGroup {
+  background-color: #fff;
+  display: block;
+  margin: 5px 0;
+  position: relative;
+
+  label {
+    padding: 6px 15px;
+    width: 100%;
+    display:relative;
+    text-align: left;
+    color: #3C454C;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 200ms ease-in;
+    overflow: hidden;
+
+    &:before {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      content: '';
+      background-color: #5562eb;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale3d(1, 1, 1);
+      transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+      opacity: 0;
+      z-index: -1;
+    }
+
+    &:after {
+      width: 32px;
+      height: 32px;
+      content: '';
+      border: 2px solid #D1D7DC;
+      background-color: #fff;
+      background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+      background-repeat: no-repeat;
+      background-position: 2px 3px;
+      border-radius: 50%;
+      z-index: 2;
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      transition: all 200ms ease-in;
+    }
+  }
+
+  input:checked ~ label {
+    color: #fff;
+
+    &:before {
+      transform: translate(-50%, -50%) scale3d(56, 56, 1);
+      opacity: 1;
+    }
+
+    &:after {
+      background-color: #54E0C7;
+      border-color: #54E0C7;
+    }
+  }
+
+  input {
+    width: 32px;
+    height: 32px;
+    order: 1;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    visibility: hidden;
+  }
+}

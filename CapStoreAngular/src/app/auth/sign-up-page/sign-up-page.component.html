@@ -1,0 +1,49 @@
+<div class="main-wrapper">
+  <div class="login-panel">
+    <h2 class="title">About You</h2>
+    <form>
+        <div>
+            <label>Customer Id:</label>
+            <input [uiInput] name="customerId" [(ngModel)]="cust.customerId">
+          </div>
+      <div>
+        <label>First Name:</label>
+        <input [uiInput] name="firstName" [(ngModel)]="cust.firstName">
+      </div>
+      <div>
+        <label>Last Name:</label>
+        <input [uiInput] name="lastName" [(ngModel)]="cust.lastName">
+      </div>
+      <div>
+        <label>Mobile Number</label>
+        <input [uiInput] name="mobileNumber" [(ngModel)]="cust.mobileNumber">
+      </div>
+      <div>
+        <label>Email address</label>
+        <input [uiInput] name="emailId" [(ngModel)]="cust.emailId">
+      </div>
+    
+      <div>
+        <label>Password:</label>
+        <input type="password" [uiInput] name="password" [(ngModel)]="cust.password">
+      </div>
+      <div>
+        <label>Address:</label>
+        <input [uiInput] name="addresses" [(ngModel)]="cust.addresses">
+      </div>
+      <div>
+        <label>Is verified</label>
+        <input type="radio" [uiInput] name="isVerified" [(ngModel)]="cust.isVerified"value="yes">yes<br>
+        <input type="radio" [uiInput] name="isVerified" [(ngModel)]="cust.isVerified" value="no"> no<br>
+      </div>
+    </form>
+    <div class="login-box">
+      <button class="btn btn-success">Sign Up</button>
+    </div>
+    <div class="policy">
+      <p>
+        By proceeding, you are confirming that you agree to our Terms and Conditions and Privacy Policy.
+      </p>
+    </div>
+  </div>
+</div>

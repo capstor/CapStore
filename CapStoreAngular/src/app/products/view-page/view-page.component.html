@@ -1,0 +1,61 @@
+<div>
+<div class="main-wrapper">
+  <div class="product-box">
+    <div class="product-preview">
+       <!-- <div *ngFor="let photo of images">
+      <ui-photo-carousel [photos]="photo.imageUrl"></ui-photo-carousel>
+    </div>   -->
+    <div *ngFor="let photo of images">
+        <img src={{photo.imageUrl}} height="50px" width="50px"> </div>
+      
+     
+      
+    </div>
+    <div class="product-info">
+      <div class="title"><h3>{{ product.productName }}</h3></div>
+      <div class="sub-title">{{ product.productDescription }}</div>
+      <div class="price-box">
+        <div class="price">
+          <s>Rs.{{ product.productPrice}}</s>&nbsp;Rs.{{ product.productPrice*(1-product.discount/100) }}
+        </div>
+        <div class="rating">
+         Avg-Rating <ui-rating [value]="productRating"></ui-rating>
+        </div>
+      </div>
+     
+      <div class="quantity">
+        <!-- <ui-qt-input [(ngModel)]="cartProduct.quantity"></ui-qt-input> -->
+        <input type="number" [(ngModel)]="cartProduct.quantity">
+      </div>
+      <button class="add" [uiButton] [icon]="'cart'" (click)="addToCart()" >Add to cart</button>
+      <button class="add" [uiButton] [icon]="'wishlist'" (click)="addToWishlist()" >Add to wishlist</button>
+      <div>
+        <h4>Delivery Information</h4>
+        <p>UK next day delivery available until 9pm plus over 160 countries shipped to worldwide.</p>
+      </div>
+      <div>
+        <h4>Returns Policy</h4>
+        <p>We are confident that you will be happy with your purchase. However, if you are not satisfied you can return
+          your item for a full refund.</p>
+      </div>
+    </div>
+  </div>
+  <div><h4>Ratings & Reviews:</h4>
+    <!-- <app-feedback [product]="product"></app-feedback>  -->
+    <div class="feedback">
+      <div *ngFor="let feed of feedbacks" >
+    
+        <div> <b>Rating: {{feed.ratingProduct}}</b> <ui-rating [value]="feed.ratingProduct"></ui-rating></div>
+        <div>{{feed.comment}}</div>
+      
+      </div>
+    </div> 
+  </div>
+  <div class="recently-viewed">
+    <h4>Similar products:</h4>
+    <div class="list-cards">
+      <app-card *ngFor="let product of recent" [product]="product"></app-card>
+    </div>
+  </div>
+</div>
+</div>

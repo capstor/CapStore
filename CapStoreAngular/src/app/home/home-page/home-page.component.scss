@@ -1,0 +1,491 @@
+@import "params";
+@import "common";
+
+
+
+.banner {
+  align-items: center;
+  background: url("../../../assets/mountain.jpg");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 600px;
+  padding: $grid * 4;
+  max-width: 100%;
+  .slogan {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: $textColor;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 3.7rem;
+    text-align: center;
+    a {
+      color: $themeBackground;
+      text-decoration: none;
+      border-bottom: 1px solid $themeBackground;
+      &:hover {
+        background: $themeBackground;
+        color: $whiteSmokeColor;
+      }
+    }
+  }
+}
+.nav-link{
+  color: rgb(16, 17, 17);
+  
+}
+.nav-link:hover {
+  background-color: bisque;
+  }
+
+.hot-offers, .trent-offers {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.trent-offers {
+  width: 930px;
+  .product {
+    width: 50%;
+  }
+  button {
+    margin-top: -$grid*2.5;
+    width: 90%;
+  }
+}
+
+.head {
+  display: flex;
+  flex-direction: row;
+  padding: $grid*3 $grid*2;
+  .line {
+    flex-grow: 1;
+  }
+  hr {
+    border-top: 2px solid $textColor;
+    margin: $grid*3 0;
+  }
+  .title {
+    margin: 0 $grid;
+    text-align: center;
+    width: 35%;
+  }
+}
+
+.offers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  margin-bottom: $grid*3;
+  text-align: center;
+  width: 370px;
+  padding: 0 $grid;
+  box-sizing: border-box;
+  > div {
+    margin-bottom: $grid;
+  }
+  .wrapper {
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 330px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.sub-title {
+  font-size: 1.2rem;
+}
+
+.price {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+button {
+  background: transparent;
+  border: 2px solid $textColor;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: $grid*3.5;
+  padding: $grid*2 $grid*4;
+  text-transform: uppercase;
+  &:hover {
+    background: $primaryColor;
+    border-color: $primaryColor;
+    box-shadow: 0 10px 30px rgba(79, 70, 228, 0.8);
+    color: #ffffff;
+  }
+}
+
+.shipping-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.element {
+  background-color: $whiteSmokeColor;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.9rem;
+  padding: $grid*4;
+  text-align: center;
+  width: 350px;
+  margin: $grid;
+}
+
+.subscribe {
+  background-color: $whiteSmokeColor;
+  margin: $grid*10 0;
+  padding: $grid*5 0;
+}
+
+.subscribe-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  .title {
+    flex-grow: 1;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .join {
+    display: flex;
+    flex-direction: row;
+    width: 360px;
+    input {
+      border: 1px solid $primaryColor;
+      border-radius: 4px 0 0 4px;
+      box-sizing: border-box;
+      height: 44px;
+      padding: 0 $grid*1.5;
+      width: 230px;
+    }
+    button {
+      background: $primaryColor;
+      box-sizing: border-box;
+      border: 1px solid $primaryColor;
+      border-radius: 0 4px 4px 0;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: normal;
+      text-align: center;
+      text-transform: uppercase;
+      padding: $grid*1.5 $grid*2;
+    }
+  }
+}
+
+
+
+
+
+
+///SLIDERS
+.container{
+  position: relative;
+   width: 80%;
+   margin-bottom: 40px;
+   margin-top: 20px;
+   margin-left: 100px;
+}
+
+
+
+///NEWS
+
+blockquote{
+  border-left:none
+}
+
+.quote-badge{
+  background-color: rgba(0, 0, 0, 0.2);   
+}
+
+.quote-box{
+  
+  overflow: hidden;
+  margin-top: -50px;
+  padding-top: -100px;
+  border-radius: 17px;
+  background-image: linear-gradient(to right, rgb(214, 162, 162) , yellow);
+  margin-top: 25px;
+  color:rgb(34, 26, 26);
+  width: 325px;
+  height: 200px;
+  box-shadow: 2px 2px 2px 2px #E0E0E0;
+  
+}
+
+.quotation-mark{
+  
+  margin-top: 0px;
+  font-weight: bold;
+  font-size:50px;
+  color:rgb(44, 31, 31);
+  font-family: "Times New Roman", Georgia, Serif;
+  
+}
+
+.quote-text{
+  
+  font-size: 16px;
+  margin-top: -40px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+
+
+@media (max-width: 1200px) {
+  .trent-offers {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .subscribe-box {
+    .join {
+      width: auto;
+      input {
+        height: 41px;
+        width: 200px;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .trent-offers {
+    .product {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  :host {
+    margin: 0;
+  }
+  .subscribe {
+    margin: 0;
+  }
+}
+
+
+
+
+
+// slider
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+.col-item
+{
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+    background: #FFF;
+}
+.col-item .photo img
+{
+    margin: 0 auto;
+    width: 100%;
+}
+
+.col-item .info
+{
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    margin-top: 1px;
+}
+
+.col-item:hover .info {
+    background-color: #F5F5DC;
+}
+.col-item .price
+{
+    /*width: 50%;*/
+    float: left;
+    margin-top: 5px;
+}
+
+.col-item .price h5
+{
+    line-height: 20px;
+    margin: 0;
+}
+
+.price-text-color
+{
+    color: #219FD1;
+}
+
+.col-item .info .rating
+{
+    color: #777;
+}
+
+.col-item .rating
+{
+    /*width: 50%;*/
+    float: left;
+    font-size: 17px;
+    text-align: right;
+    line-height: 52px;
+    margin-bottom: 10px;
+    height: 52px;
+}
+
+.col-item .separator
+{
+    border-top: 1px solid #E1E1E1;
+}
+
+.clear-left
+{
+    clear: left;
+}
+
+.col-item .separator p
+{
+    line-height: 20px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.col-item .separator p i
+{
+    margin-right: 5px;
+}
+.col-item .btn-add
+{
+    width: 50%;
+    float: left;
+}
+
+.col-item .btn-add
+{
+    border-right: 1px solid #E1E1E1;
+}
+
+.col-item .btn-details
+{
+    width: 50%;
+    float: left;
+    padding-left: 10px;
+}
+.controls
+{
+    margin-top: 20px;
+}
+[data-slide="prev"]
+{
+    margin-right: 10px;
+}
+
+
+
+
+
+//////////////////////@at-root
+
+$transition_time:.0s;
+
+.carousel {
+  .content {
+    display: flex;
+
+    .item {
+      width: 100%;
+      display: block;
+      // fade
+      opacity: 0;
+
+      // using delay to prevent left change show error
+      &.fade_animation {
+        transition: opacity 0.295s linear $transition_time;
+      }
+
+      &.fade_animation_0 {
+        transition: opacity 0.295s linear;
+      }
+
+      &.visible {
+        opacity: 1;
+      }
+
+      &:last-child,
+      &:first-child,
+      {
+        opacity: 0;
+      }
+
+      &.visible_important {
+        opacity: 1;
+      }
+
+      .img {
+        width: 100%;
+        display: block;
+        background-size: cover;
+        background-position: center;
+        height: 0;
+        padding-bottom: 50%;
+      }
+    }
+
+
+  }
+
+  .ball {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: black;
+    border: 2px solid;
+    opacity: 0.5;
+
+    &.visible {
+      opacity: 1;
+    }
+  }
+
+  .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #ff5252;
+  }
+
+  .click-area {
+    width: 50px;
+    text-align: center;
+
+    i {
+      font-size: 3em;
+    }
+  }
+}

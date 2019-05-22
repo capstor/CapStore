@@ -1,0 +1,26 @@
+<div>
+    
+      <button class="button"><a [routerLink]="['/home']"><span>Home</span></a></button>
+       
+  </div>
+<div id="bot">
+<h1>Live Chat</h1>
+
+<ng-container *ngFor="let message of messages | async">
+
+  <div class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
+                                    'to':   message.sentBy === 'user' }">
+    {{ message.content }}
+  </div>
+
+</ng-container>
+
+
+<label for="nameField">Your Message</label>
+
+
+<input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text">
+
+<button (click)="sendMessage()"><span>Send</span></button>
+
+</div>
